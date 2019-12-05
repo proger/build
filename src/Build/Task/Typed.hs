@@ -36,7 +36,7 @@ type ShowKey k = forall a. k a -> String
 dependencies :: ShowKey k -> Task Applicative k -> k a -> [String]
 dependencies showKey task = maybe [] getConst . task (\k -> Const [showKey k])
 
------------------------------ GCC versison example -----------------------------
+----------------------------- GCC version example -----------------------------
 data Version = Version { major :: Int, minor :: Int }
     deriving (Eq, Ord)
 
